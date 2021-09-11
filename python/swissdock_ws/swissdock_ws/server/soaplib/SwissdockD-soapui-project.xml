@@ -1,0 +1,427 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:soapui-project name="SwissdockD" soapui-version="3.5" abortOnError="false" runType="SEQUENTIAL" resourceRoot="" xmlns:con="http://eviware.com/soapui/config"><con:settings/><con:interface xsi:type="con:WsdlInterface" wsaVersion="NONE" name="SwissdockInterfaceWrapper" type="wsdl" bindingName="{http://www.w3.org/2001/XMLSchema}SwissdockInterfaceWrapper" soapVersion="1_1" anonymous="optional" definition="http://localhost:8080/wsdl" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:settings/><con:definitionCache type="TEXT" rootPart="http://localhost:8080/wsdl"><con:part><con:url>http://localhost:8080/wsdl</con:url><con:content><![CDATA[<definitions targetNamespace="http://www.w3.org/2001/XMLSchema" name="SwissdockInterfaceWrapper" xmlns:plnk="http://schemas.xmlsoap.org/ws/2003/05/partner-link/" xmlns:tns="http://www.w3.org/2001/XMLSchema" xmlns:typens="http://www.w3.org/2001/XMLSchema" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/1999/XMLSchema-instance" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns="http://schemas.xmlsoap.org/wsdl/">
+  <types>
+    <schema targetNamespace="http://www.w3.org/2001/XMLSchema" xmlns="http://www.w3.org/2001/XMLSchema">
+      <tns:complexType name="getPreparedTargetResponse">
+        <tns:sequence>
+          <tns:element name="getPreparedTargetResult" type="tns:stringArray"/>
+        </tns:sequence>
+      </tns:complexType>
+      <tns:element name="isLigandPreparedResponse" type="tns:isLigandPreparedResponse"/>
+      <tns:element name="prepareTargetResponse" type="tns:prepareTargetResponse"/>
+      <tns:element name="startDockingResponse" type="tns:startDockingResponse"/>
+      <tns:complexType name="isDockingTerminatedResponse">
+        <tns:sequence>
+          <tns:element name="isDockingTerminatedResult" type="xs:boolean"/>
+        </tns:sequence>
+      </tns:complexType>
+      <tns:element name="isTargetPreparedResponse" type="tns:isTargetPreparedResponse"/>
+      <tns:element name="isDockingTerminatedResponse" type="tns:isDockingTerminatedResponse"/>
+      <tns:element name="prepareLigandResponse" type="tns:prepareLigandResponse"/>
+      <tns:complexType name="isTargetPrepared">
+        <tns:sequence>
+          <tns:element name="jobID" type="xs:string"/>
+        </tns:sequence>
+      </tns:complexType>
+      <tns:element name="getPredictedDockingResponse" type="tns:getPredictedDockingResponse"/>
+      <tns:element name="isDockingTerminated" type="tns:isDockingTerminated"/>
+      <tns:complexType name="startDocking">
+        <tns:sequence>
+          <tns:element name="targetPsf" type="xs:string"/>
+          <tns:element name="targetCrd" type="xs:string"/>
+          <tns:element name="ligandPdb" type="xs:string"/>
+          <tns:element name="ligandRtf" type="xs:string"/>
+          <tns:element name="ligandPar" type="xs:string"/>
+          <tns:element name="jobName" type="xs:string"/>
+          <tns:element name="emailAddress" type="xs:string"/>
+          <tns:element name="password" type="xs:string"/>
+          <tns:element name="xmin" type="xs:float"/>
+          <tns:element name="xmax" type="xs:float"/>
+          <tns:element name="ymin" type="xs:float"/>
+          <tns:element name="ymax" type="xs:float"/>
+          <tns:element name="zmin" type="xs:float"/>
+          <tns:element name="zmax" type="xs:float"/>
+          <tns:element name="wantedConfs" type="xs:int"/>
+          <tns:element name="nbFactsEval" type="xs:int"/>
+          <tns:element name="nbSeeds" type="xs:int"/>
+          <tns:element name="sdSteps" type="xs:int"/>
+          <tns:element name="abnrSteps" type="xs:int"/>
+          <tns:element name="clusteringRadius" type="xs:float"/>
+          <tns:element name="maxClusterSize" type="xs:int"/>
+          <tns:element name="ignorePocketBias" type="xs:boolean"/>
+          <tns:element name="keepLigandInPlace" type="xs:boolean"/>
+        </tns:sequence>
+      </tns:complexType>
+      <tns:element name="isTargetPrepared" type="tns:isTargetPrepared"/>
+      <tns:complexType name="isTargetPreparedResponse">
+        <tns:sequence>
+          <tns:element name="isTargetPreparedResult" type="xs:boolean"/>
+        </tns:sequence>
+      </tns:complexType>
+      <tns:complexType name="isLigandPrepared">
+        <tns:sequence>
+          <tns:element name="jobID" type="xs:string"/>
+        </tns:sequence>
+      </tns:complexType>
+      <tns:complexType name="prepareTargetResponse">
+        <tns:sequence>
+          <tns:element name="prepareTargetResult" type="xs:string"/>
+        </tns:sequence>
+      </tns:complexType>
+      <tns:element name="stringArray" type="tns:stringArray"/>
+      <tns:element name="getPredictedDocking" type="tns:getPredictedDocking"/>
+      <tns:complexType name="getPreparedLigandResponse">
+        <tns:sequence>
+          <tns:element name="getPreparedLigandResult" type="tns:stringArray"/>
+        </tns:sequence>
+      </tns:complexType>
+      <tns:complexType name="startDockingResponse">
+        <tns:sequence>
+          <tns:element name="startDockingResult" type="xs:string"/>
+        </tns:sequence>
+      </tns:complexType>
+      <tns:element name="startDocking" type="tns:startDocking"/>
+      <tns:complexType name="stringArray">
+        <tns:sequence>
+          <tns:element minOccurs="0" maxOccurs="unbounded" type="tns:string" name="string"/>
+        </tns:sequence>
+      </tns:complexType>
+      <tns:complexType name="prepareLigandResponse">
+        <tns:sequence>
+          <tns:element name="prepareLigandResult" type="xs:string"/>
+        </tns:sequence>
+      </tns:complexType>
+      <tns:element name="prepareTarget" type="tns:prepareTarget"/>
+      <tns:complexType name="isDockingTerminated">
+        <tns:sequence>
+          <tns:element name="jobID" type="xs:string"/>
+        </tns:sequence>
+      </tns:complexType>
+      <tns:complexType name="getPreparedLigand">
+        <tns:sequence>
+          <tns:element name="jobID" type="xs:string"/>
+        </tns:sequence>
+      </tns:complexType>
+      <tns:element name="isLigandPrepared" type="tns:isLigandPrepared"/>
+      <tns:complexType name="getPredictedDockingResponse">
+        <tns:sequence>
+          <tns:element name="getPredictedDockingResult" type="tns:stringArray"/>
+        </tns:sequence>
+      </tns:complexType>
+      <tns:element name="getPreparedTargetResponse" type="tns:getPreparedTargetResponse"/>
+      <tns:complexType name="isLigandPreparedResponse">
+        <tns:sequence>
+          <tns:element name="isLigandPreparedResult" type="xs:boolean"/>
+        </tns:sequence>
+      </tns:complexType>
+      <tns:complexType name="prepareLigand">
+        <tns:sequence>
+          <tns:element name="ligand" type="xs:string"/>
+        </tns:sequence>
+      </tns:complexType>
+      <tns:element name="getPreparedLigand" type="tns:getPreparedLigand"/>
+      <tns:complexType name="prepareTarget">
+        <tns:sequence>
+          <tns:element name="target" type="xs:string"/>
+        </tns:sequence>
+      </tns:complexType>
+      <tns:complexType name="getPredictedDocking">
+        <tns:sequence>
+          <tns:element name="jobID" type="xs:string"/>
+          <tns:element name="getPdb" type="xs:boolean"/>
+          <tns:element name="getDock4" type="xs:boolean"/>
+        </tns:sequence>
+      </tns:complexType>
+      <tns:element name="prepareLigand" type="tns:prepareLigand"/>
+      <tns:element name="getPreparedLigandResponse" type="tns:getPreparedLigandResponse"/>
+      <tns:element name="getPreparedTarget" type="tns:getPreparedTarget"/>
+      <tns:complexType name="getPreparedTarget">
+        <tns:sequence>
+          <tns:element name="jobID" type="xs:string"/>
+        </tns:sequence>
+      </tns:complexType>
+    </schema>
+  </types>
+  <message name="getPredictedDocking">
+    <part name="getPredictedDocking" element="tns:getPredictedDocking"/>
+  </message>
+  <message name="getPredictedDockingResponse">
+    <part name="getPredictedDockingResponse" element="tns:getPredictedDockingResponse"/>
+  </message>
+  <message name="getPreparedLigand">
+    <part name="getPreparedLigand" element="tns:getPreparedLigand"/>
+  </message>
+  <message name="getPreparedLigandResponse">
+    <part name="getPreparedLigandResponse" element="tns:getPreparedLigandResponse"/>
+  </message>
+  <message name="getPreparedTarget">
+    <part name="getPreparedTarget" element="tns:getPreparedTarget"/>
+  </message>
+  <message name="getPreparedTargetResponse">
+    <part name="getPreparedTargetResponse" element="tns:getPreparedTargetResponse"/>
+  </message>
+  <message name="isDockingTerminated">
+    <part name="isDockingTerminated" element="tns:isDockingTerminated"/>
+  </message>
+  <message name="isDockingTerminatedResponse">
+    <part name="isDockingTerminatedResponse" element="tns:isDockingTerminatedResponse"/>
+  </message>
+  <message name="isLigandPrepared">
+    <part name="isLigandPrepared" element="tns:isLigandPrepared"/>
+  </message>
+  <message name="isLigandPreparedResponse">
+    <part name="isLigandPreparedResponse" element="tns:isLigandPreparedResponse"/>
+  </message>
+  <message name="isTargetPrepared">
+    <part name="isTargetPrepared" element="tns:isTargetPrepared"/>
+  </message>
+  <message name="isTargetPreparedResponse">
+    <part name="isTargetPreparedResponse" element="tns:isTargetPreparedResponse"/>
+  </message>
+  <message name="prepareLigand">
+    <part name="prepareLigand" element="tns:prepareLigand"/>
+  </message>
+  <message name="prepareLigandResponse">
+    <part name="prepareLigandResponse" element="tns:prepareLigandResponse"/>
+  </message>
+  <message name="prepareTarget">
+    <part name="prepareTarget" element="tns:prepareTarget"/>
+  </message>
+  <message name="prepareTargetResponse">
+    <part name="prepareTargetResponse" element="tns:prepareTargetResponse"/>
+  </message>
+  <message name="startDocking">
+    <part name="startDocking" element="tns:startDocking"/>
+  </message>
+  <message name="startDockingResponse">
+    <part name="startDockingResponse" element="tns:startDockingResponse"/>
+  </message>
+  <portType name="SwissdockInterfaceWrapper">
+    <operation name="getPredictedDocking" parameterOrder="getPredictedDocking">
+      <documentation/>
+      <input name="getPredictedDocking" message="tns:getPredictedDocking"/>
+      <output name="getPredictedDockingResponse" message="tns:getPredictedDockingResponse"/>
+    </operation>
+    <operation name="getPreparedLigand" parameterOrder="getPreparedLigand">
+      <documentation/>
+      <input name="getPreparedLigand" message="tns:getPreparedLigand"/>
+      <output name="getPreparedLigandResponse" message="tns:getPreparedLigandResponse"/>
+    </operation>
+    <operation name="getPreparedTarget" parameterOrder="getPreparedTarget">
+      <documentation/>
+      <input name="getPreparedTarget" message="tns:getPreparedTarget"/>
+      <output name="getPreparedTargetResponse" message="tns:getPreparedTargetResponse"/>
+    </operation>
+    <operation name="isDockingTerminated" parameterOrder="isDockingTerminated">
+      <documentation/>
+      <input name="isDockingTerminated" message="tns:isDockingTerminated"/>
+      <output name="isDockingTerminatedResponse" message="tns:isDockingTerminatedResponse"/>
+    </operation>
+    <operation name="isLigandPrepared" parameterOrder="isLigandPrepared">
+      <documentation/>
+      <input name="isLigandPrepared" message="tns:isLigandPrepared"/>
+      <output name="isLigandPreparedResponse" message="tns:isLigandPreparedResponse"/>
+    </operation>
+    <operation name="isTargetPrepared" parameterOrder="isTargetPrepared">
+      <documentation/>
+      <input name="isTargetPrepared" message="tns:isTargetPrepared"/>
+      <output name="isTargetPreparedResponse" message="tns:isTargetPreparedResponse"/>
+    </operation>
+    <operation name="prepareLigand" parameterOrder="prepareLigand">
+      <documentation/>
+      <input name="prepareLigand" message="tns:prepareLigand"/>
+      <output name="prepareLigandResponse" message="tns:prepareLigandResponse"/>
+    </operation>
+    <operation name="prepareTarget" parameterOrder="prepareTarget">
+      <documentation/>
+      <input name="prepareTarget" message="tns:prepareTarget"/>
+      <output name="prepareTargetResponse" message="tns:prepareTargetResponse"/>
+    </operation>
+    <operation name="startDocking" parameterOrder="startDocking">
+      <documentation/>
+      <input name="startDocking" message="tns:startDocking"/>
+      <output name="startDockingResponse" message="tns:startDockingResponse"/>
+    </operation>
+  </portType>
+  <plnk:partnerLinkType name="SwissdockInterfaceWrapper">
+    <plnk:role name="SwissdockInterfaceWrapper">
+      <plnk:portType name="tns:SwissdockInterfaceWrapper"/>
+    </plnk:role>
+  </plnk:partnerLinkType>
+  <binding name="SwissdockInterfaceWrapper" type="tns:SwissdockInterfaceWrapper">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <operation name="getPredictedDocking">
+      <soap:operation soapAction="getPredictedDocking" style="document"/>
+      <input name="getPredictedDocking">
+        <soap:body use="literal"/>
+      </input>
+      <output name="getPredictedDockingResponse">
+        <soap:body use="literal"/>
+      </output>
+    </operation>
+    <operation name="getPreparedLigand">
+      <soap:operation soapAction="getPreparedLigand" style="document"/>
+      <input name="getPreparedLigand">
+        <soap:body use="literal"/>
+      </input>
+      <output name="getPreparedLigandResponse">
+        <soap:body use="literal"/>
+      </output>
+    </operation>
+    <operation name="getPreparedTarget">
+      <soap:operation soapAction="getPreparedTarget" style="document"/>
+      <input name="getPreparedTarget">
+        <soap:body use="literal"/>
+      </input>
+      <output name="getPreparedTargetResponse">
+        <soap:body use="literal"/>
+      </output>
+    </operation>
+    <operation name="isDockingTerminated">
+      <soap:operation soapAction="isDockingTerminated" style="document"/>
+      <input name="isDockingTerminated">
+        <soap:body use="literal"/>
+      </input>
+      <output name="isDockingTerminatedResponse">
+        <soap:body use="literal"/>
+      </output>
+    </operation>
+    <operation name="isLigandPrepared">
+      <soap:operation soapAction="isLigandPrepared" style="document"/>
+      <input name="isLigandPrepared">
+        <soap:body use="literal"/>
+      </input>
+      <output name="isLigandPreparedResponse">
+        <soap:body use="literal"/>
+      </output>
+    </operation>
+    <operation name="isTargetPrepared">
+      <soap:operation soapAction="isTargetPrepared" style="document"/>
+      <input name="isTargetPrepared">
+        <soap:body use="literal"/>
+      </input>
+      <output name="isTargetPreparedResponse">
+        <soap:body use="literal"/>
+      </output>
+    </operation>
+    <operation name="prepareLigand">
+      <soap:operation soapAction="prepareLigand" style="document"/>
+      <input name="prepareLigand">
+        <soap:body use="literal"/>
+      </input>
+      <output name="prepareLigandResponse">
+        <soap:body use="literal"/>
+      </output>
+    </operation>
+    <operation name="prepareTarget">
+      <soap:operation soapAction="prepareTarget" style="document"/>
+      <input name="prepareTarget">
+        <soap:body use="literal"/>
+      </input>
+      <output name="prepareTargetResponse">
+        <soap:body use="literal"/>
+      </output>
+    </operation>
+    <operation name="startDocking">
+      <soap:operation soapAction="startDocking" style="document"/>
+      <input name="startDocking">
+        <soap:body use="literal"/>
+      </input>
+      <output name="startDockingResponse">
+        <soap:body use="literal"/>
+      </output>
+    </operation>
+  </binding>
+  <service name="SwissdockInterfaceWrapper">
+    <port name="SwissdockInterfaceWrapper" binding="tns:SwissdockInterfaceWrapper">
+      <soap:address location="http://localhost:8080/wsdl"/>
+    </port>
+  </service>
+</definitions>]]></con:content><con:type>http://schemas.xmlsoap.org/wsdl/</con:type></con:part></con:definitionCache><con:endpoints><con:endpoint>http://localhost:8080/wsdl</con:endpoint></con:endpoints><con:operation isOneWay="false" action="getPredictedDocking" name="getPredictedDocking" bindingOperationName="getPredictedDocking" type="Request-Response" outputName="getPredictedDockingResponse" inputName="getPredictedDocking" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call name="Request 1"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8080/wsdl</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <soapenc:getPredictedDocking>
+         <jobID>swissdockd_7LPnuE_docking</jobID>
+         <getPdb>True</getPdb>
+         <getDock4>True</getDock4>
+      </soapenc:getPredictedDocking>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="getPredictedDocking"/><con:wsrmConfig version="1.2"/></con:call></con:operation><con:operation isOneWay="false" action="getPreparedLigand" name="getPreparedLigand" bindingOperationName="getPreparedLigand" type="Request-Response" outputName="getPreparedLigandResponse" inputName="getPreparedLigand" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call name="Request 1"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8080/wsdl</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <soapenc:getPreparedLigand>
+         <jobID>738</jobID>
+      </soapenc:getPreparedLigand>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="getPreparedLigand"/><con:wsrmConfig version="1.2"/></con:call></con:operation><con:operation isOneWay="false" action="getPreparedTarget" name="getPreparedTarget" bindingOperationName="getPreparedTarget" type="Request-Response" outputName="getPreparedTargetResponse" inputName="getPreparedTarget" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8080/wsdl</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <soapenc:getPreparedTarget>
+         <jobID>?</jobID>
+      </soapenc:getPreparedTarget>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="getPreparedTarget"/></con:call></con:operation><con:operation isOneWay="false" action="isDockingTerminated" name="isDockingTerminated" bindingOperationName="isDockingTerminated" type="Request-Response" outputName="isDockingTerminatedResponse" inputName="isDockingTerminated" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8080/wsdl</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <soapenc:isDockingTerminated>
+         <jobID>?</jobID>
+      </soapenc:isDockingTerminated>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="isDockingTerminated"/></con:call></con:operation><con:operation isOneWay="false" action="isLigandPrepared" name="isLigandPrepared" bindingOperationName="isLigandPrepared" type="Request-Response" outputName="isLigandPreparedResponse" inputName="isLigandPrepared" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8080/wsdl</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <soapenc:isLigandPrepared>
+         <jobID>?</jobID>
+      </soapenc:isLigandPrepared>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="isLigandPrepared"/></con:call></con:operation><con:operation isOneWay="false" action="isTargetPrepared" name="isTargetPrepared" bindingOperationName="isTargetPrepared" type="Request-Response" outputName="isTargetPreparedResponse" inputName="isTargetPrepared" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8080/wsdl</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <soapenc:isTargetPrepared>
+         <jobID>?</jobID>
+      </soapenc:isTargetPrepared>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="isTargetPrepared"/></con:call></con:operation><con:operation isOneWay="false" action="prepareLigand" name="prepareLigand" bindingOperationName="prepareLigand" type="Request-Response" outputName="prepareLigandResponse" inputName="prepareLigand" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8080/wsdl</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <soapenc:prepareLigand>
+         <ligand>?</ligand>
+      </soapenc:prepareLigand>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="prepareLigand"/></con:call></con:operation><con:operation isOneWay="false" action="prepareTarget" name="prepareTarget" bindingOperationName="prepareTarget" type="Request-Response" outputName="prepareTargetResponse" inputName="prepareTarget" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call name="Request 1"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8080/wsdl</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <soapenc:prepareTarget>
+         <target>1A15</target>
+      </soapenc:prepareTarget>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="prepareTarget"/><con:wsrmConfig version="1.2"/></con:call></con:operation><con:operation isOneWay="false" action="startDocking" name="startDocking" bindingOperationName="startDocking" type="Request-Response" outputName="startDockingResponse" inputName="startDocking" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8080/wsdl</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <soapenc:startDocking>
+         <targetPsf>?</targetPsf>
+         <targetCrd>?</targetCrd>
+         <ligandPdb>?</ligandPdb>
+         <ligandRtf>?</ligandRtf>
+         <ligandPar>?</ligandPar>
+         <jobName>?</jobName>
+         <emailAddress>?</emailAddress>
+         <password>?</password>
+         <xmin>?</xmin>
+         <xmax>?</xmax>
+         <ymin>?</ymin>
+         <ymax>?</ymax>
+         <zmin>?</zmin>
+         <zmax>?</zmax>
+         <wantedConfs>?</wantedConfs>
+         <nbFactsEval>?</nbFactsEval>
+         <nbSeeds>?</nbSeeds>
+         <sdSteps>?</sdSteps>
+         <abnrSteps>?</abnrSteps>
+         <clusteringRadius>?</clusteringRadius>
+         <maxClusterSize>?</maxClusterSize>
+         <ignorePocketBias>?</ignorePocketBias>
+         <keepLigandInPlace>?</keepLigandInPlace>
+      </soapenc:startDocking>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="startDocking"/></con:call></con:operation></con:interface><con:properties/><con:wssContainer/></con:soapui-project>

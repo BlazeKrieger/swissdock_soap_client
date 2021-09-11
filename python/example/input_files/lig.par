@@ -1,0 +1,49 @@
+* ---- 
+* Built parameters for  
+*    by user vzoete     Tue Aug 21 08:48:48 CEST 2007 
+* ---- 
+*
+
+BONDS
+HNRP NCNP  485.340     1.0140 
+NCNP CGDP  520.100     1.3190 
+CGDP CB    366.452     1.4400 
+HCMM CB    381.853     1.0840 
+CB   CB    401.068     1.3740 
+
+ANGLES
+CB   CB   CB     48.145    119.9770 
+CB   CB   CGDP   63.402    120.9320 
+CB   CB   HCMM   40.517    120.5710 
+CB   CGDP NCNP   69.591    121.3790 
+NCNP CGDP NCNP   61.531    126.4760 
+CGDP NCNP HNRP   47.713    119.4990 
+HNRP NCNP HNRP   25.548    117.7290 
+
+DIHEDRALS
+CB   CB   CB   CB       3.500  2   180.00 
+CB   CB   CB   HCMM     3.500  2   180.00 
+CB   CGDP NCNP HNRP     2.400  2   180.00 
+CB   CB   CGDP NCNP     0.900  2   180.00 
+CB   CB   CB   CGDP     3.500  2   180.00 
+CGDP CB   CB   HCMM     1.000  2   180.00 
+NCNP CGDP NCNP HNRP     0.137  1     0.00 
+NCNP CGDP NCNP HNRP     4.013  2   180.00 
+NCNP CGDP NCNP HNRP     0.346  3     0.00 
+HCMM CB   CB   HCMM     3.500  2   180.00 
+
+IMPROPER
+CB   CB   CGDP CB       2.519  0     0.00 
+CB   CB   CB   HCMM     1.079  0     0.00 
+CGDP NCNP CB   NCNP     5.757  0     0.00 
+NCNP HNRP CGDP HNRP     1.439  0     0.00 
+
+NONBONDED nbxmod  5 atom cdiel shift vatom vdistance vswitch - 
+cutnb 14.0 ctofnb 12.0 ctonnb 10.0 eps 1.0 e14fac 1.0 wmin 1.5 
+CB      0.000000  -0.070000     1.992400
+CGDP    0.000000  -0.110000     2.000000
+NCNP    0.000000  -0.200000     1.850000
+HCMM    0.000000  -0.022000     1.320000
+HNRP    0.000000  -0.046000     0.224500
+
+

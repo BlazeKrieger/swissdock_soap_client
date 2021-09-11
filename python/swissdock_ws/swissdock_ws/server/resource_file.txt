@@ -1,0 +1,39 @@
+#[Resource]
+#res_name
+#user_name
+#host_name
+#ssh_port 
+#ssh_key
+#tmp_dir
+#submission_script
+
+#[LSFComputingResource]
+#res_name Vital-IT
+#user_name swissdock
+#host_name localhost
+#ssh_port 2022
+#ssh_key /etc/swissdock/id_dsa
+#tmp_dir /home/swissdock/swissdock/tmp/
+#submission_script submission/launch.frt.prdclst.vital-it.ch
+#allow_pooled_jobs true
+
+#[SGEComputingResource]
+#res_name Argos
+#user_name agrosdid
+#host_name localhost
+#ssh_port 2023
+#ssh_key /etc/swissdock/id_dsa
+#tmp_dir /users/agrosdid/swissdock/tmp
+#submission_script submission/launch.argos1.unil.ch
+#allow_pooled_jobs true
+
+[SGEComputingResource]
+res_name Workstations
+user_name swissdock
+host_name localhost
+ssh_port 2024
+ssh_key /etc/swissdock/id_dsa
+tmp_dir /export/home/swissdock/tmp/
+submission_script submission/launch.workstations.unil.ch
+allow_pooled_jobs false
+

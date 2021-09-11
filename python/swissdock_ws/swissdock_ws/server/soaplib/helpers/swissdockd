@@ -1,0 +1,59 @@
+#!/bin/bash
+#
+# chkconfig: 35 90 12
+# description: Swissdock SOAP server
+#
+
+# Get function from functions library
+. /etc/init.d/functions
+
+export PYTHONCMD=/usr/bin/python2.6
+export PYTHONFLAGS="-u"
+export PYTHONPATH=/home/swissdock/swissdock/python
+export SWISSDOCKSERVER=/home/swissdock/swissdock/python/swissdock_daemon/swissdock_daemon.py
+export SWISSDOCKDTMPDIR=/tmp
+export CHARMMBINARY=/home/agrosdid/charmm/charmm_linux_amd64
+export CHARMMPARAMETER=/home/agrosdid/charmm/par_all22_prot.inp
+export CHARMMTOPOLOGY=/home/agrosdid/charmm/top_all22_prot.inp
+
+DAEMON=swissdock
+
+# Start the service FOO
+start() {
+        initlog -c "echo -n Starting $DAEMON server: "
+	$PYTHONCMD $PYTHONFLAGS $SWISSDOCKSERVER --vitalit-ip=10.0.16.32 --key=/home/swissdock/.ssh/id_dsa &
+	echo $! > /var/lock/subsys/$DAEMON
+        success $"$DAEMON server startup"
+        echo
+}
+
+# Restart the service FOO
+stop() {
+        initlog -c "echo -n Stopping $DAEMON server: "
+        kill -15 `cat /var/lock/subsys/$DAEMON`
+        ### Now, delete the lock file ###
+        rm -f /var/lock/subsys/$DAEMON
+        echo
+}
+
+### main logic ###
+case "$1" in
+  start)
+        start
+        ;;
+  stop)
+        stop
+        ;;
+  status)
+        status $DAEMON
+        ;;
+  restart|reload|condrestart)
+        stop
+        start
+        ;;
+  *)
+        echo $"Usage: $0 {start|stop|restart|status}"
+        exit 1
+esac
+
+exit 0
